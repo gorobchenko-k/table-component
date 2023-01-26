@@ -1,0 +1,97 @@
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.table-container {
+    width: 50%;
+    margin: 20px;
+}
+
+.table {
+    border-collapse: collapse;
+}
+
+.table td,
+.table th {
+    border: 1px solid #f0f0f0;
+    padding: 3px;
+}
+
+.table__head {
+    background: #fafafa;
+}
+
+.table__head th div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+.sort {
+    display: flex;
+    flex-direction: column;
+}
+
+.sort span {
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid #bdbdbd;
+    cursor: pointer;
+    margin: 2px 5px;
+}
+
+.sort span:hover {
+    border-top: 10px solid #7b7b7b;
+}
+
+.sort span:first-child {
+    transform: rotate(180deg);
+}
+
+.table__body tr {
+    cursor: pointer;
+}
+
+.table__body tr:hover {
+    background: #f0f0f0;
+}
+
+.about p {
+    margin: 0;
+    -webkit-line-clamp: 2;
+    /* Число отображаемых строк */
+    display: -webkit-box;
+    /* Включаем флексбоксы */
+    -webkit-box-orient: vertical;
+    /* Вертикальная ориентация */
+    overflow: hidden;
+    /* Обрезаем всё за пределами блока */
+}
+
+.form-container {
+    margin: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+input,
+textarea {
+    margin: 10px 0 0 0;
+    padding: 5px 10px;
+    width: 100%;
+    min-height: 2em;
+    border: 1px solid #7b7b7b;
+    border-radius: 5px;
+}

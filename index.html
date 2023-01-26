@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Component</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Таблица с данными -->
+        <div class="table-container">
+            <table class="table">
+                <thead class="table__head">
+                    <tr>
+                        <th>
+                            <div>
+                                First name
+                                <span class="sort">
+                                    <span class="sort-asc"></span>
+                                    <span class="sort-desc"></span>
+                                </span>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                Last name
+                                <div class="sort">
+                                    <span class="sort-asc"></span>
+                                    <span class="sort-desc"></span>
+                                </div>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                About
+                                <div class="sort">
+                                    <span class="sort-asc"></span>
+                                    <span class="sort-desc"></span>
+                                </div>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                Eye color
+                                <div class="sort">
+                                    <span class="sort-asc"></span>
+                                    <span class="sort-desc"></span>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="table__body">
+                </tbody>
+            </table>
+        </div>
+        <!-- Форма для изменения данных таблицы -->
+        <div class="form-container">
+            <form action="" class="form">
+                <input id="firstName" type="text" placeholder="First name">
+                <input id="lastName" type="text" placeholder="Last name">
+                <textarea id="about" cols="30" rows="10" placeholder="About"></textarea>
+                <input id="eyeColor" type="color">
+            </form>
+        </div>
+    </div>
+
+    <script src="scripts/people.js"></script>
+    <script src="scripts/download-data.js"></script>
+</body>
+
+</html>
