@@ -53,6 +53,10 @@ body {
     border-top: 10px solid #7b7b7b;
 }
 
+.sort span._active {
+    border-top: 10px solid #4b4b4b;
+}
+
 .sort span:first-child {
     transform: rotate(180deg);
 }
