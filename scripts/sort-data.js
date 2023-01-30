@@ -2,8 +2,8 @@ const sortAsc = document.querySelectorAll(".sort-asc");
 const sortDesc = document.querySelectorAll(".sort-desc");
 
 //каждой стрелке для сортировки добавляем событие
-sortAsc.forEach(item => item.addEventListener("click", (e) => x(e.target, "asc")));
-sortDesc.forEach(item => item.addEventListener("click", (e) => x(e.target, "desc")));
+sortAsc.forEach(item => item.addEventListener("click", (e) => showSort(e.target, "asc")));
+sortDesc.forEach(item => item.addEventListener("click", (e) => showSort(e.target, "desc")));
 
 //функция, которая выделяет стрелку сортировки и выводит отсортированный массив People
 function showSort(target, orderSort) {

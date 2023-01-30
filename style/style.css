@@ -69,6 +69,10 @@ body {
     background: #f0f0f0;
 }
 
+.table__body tr._active {
+    background: #f0f0f0;
+}
+
 .about p {
     margin: 0;
     -webkit-line-clamp: 2;
@@ -86,6 +90,10 @@ body {
 }
 
 .form {
+    display: none;
+}
+
+.form._active{
     display: flex;
     flex-direction: column;
 }
