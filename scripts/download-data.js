@@ -3,6 +3,12 @@ const tablePages = document.querySelector(".table__pages");
 const countRows = 10;
 let pageNumber = 1; //при загрузке отобажается 1ая страница таблицы
 let data = people.slice();
+let hiddenColumns = { // false - колонка скрыта
+    firstName: true,
+    lastName: true,
+    about: true,
+    eyeColor: true
+};
 // выводим номера страниц
 let strTablePages = "";
 for (let index = 1; index <= people.length / countRows; index++) {
@@ -27,10 +33,10 @@ function downloadData(people) {
     for (let index = firstRow; index < lastRow; index++) {
         const person = people[index];
         strTable += `<tr data-id=${person.id}>
-                    <td class="firstName">${person.name.firstName}</td>
-                    <td class="lastName">${person.name.lastName}</td>
-                    <td class="about"><p>${person.about}</p></td>
-                    <td class="eyeColor" style="background-color: ${person.eyeColor};">${person.eyeColor}</td>
+                    <td class="firstName ${hiddenColumns.firstName ? '' : '_hidden'}">${person.name.firstName}</td>
+                    <td class="lastName ${hiddenColumns.lastName ? '' : '_hidden'}">${person.name.lastName}</td>
+                    <td class="about ${hiddenColumns.about ? '' : '_hidden'}"><p>${person.about}</p></td>
+                    <td class="eyeColor ${hiddenColumns.eyeColor ? '' : '_hidden'}" style="background-color: ${person.eyeColor};"></td>
                 </tr>`;
     }
 

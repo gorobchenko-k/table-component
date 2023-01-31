@@ -8,18 +8,25 @@ body {
 }
 
 .table-container {
-    width: 50%;
+    width: 60vw;
     margin: 20px;
+    display: flex;
 }
 
 .table {
+    width: 50vw;
     border-collapse: collapse;
 }
 
-.table td,
-.table th {
+.table th,
+.table td {
     border: 1px solid #f0f0f0;
     padding: 3px;
+}
+
+.table th._hidden,
+.table td._hidden {
+    display: none;
 }
 
 .table__head {
@@ -47,6 +54,7 @@ body {
     border-top: 10px solid #bdbdbd;
     cursor: pointer;
     margin: 2px 5px;
+    transition: all 0.3s ease 0s;
 }
 
 .sort span:hover {
@@ -63,6 +71,7 @@ body {
 
 .table__body tr {
     cursor: pointer;
+    transition: all 0.7s ease 0s;
 }
 
 .table__body tr:hover {
@@ -96,6 +105,7 @@ body {
     text-decoration: underline;
     cursor: pointer;
     padding: 5px;
+    transition: all 0.3s ease 0s;
 }
 
 .table__page:hover {
@@ -104,6 +114,50 @@ body {
 
 .table__page._active {
     font-weight: 700;
+}
+
+.table__setting {
+    position: relative;
+    padding: 0 10px;
+}
+
+.table__setting i {
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.table__setting i:hover {
+    color: #7b7b7b;
+}
+
+.table__setting-list {
+    display: none;
+    position: absolute;
+    top: 5px;
+    left: 35px;
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    background-color: #fafafa;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+}
+
+.table__setting-list._active {
+    display: block;
+}
+
+.table__setting-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.table__setting-item {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    padding: 3px 0;
 }
 
 .form-container {
@@ -119,7 +173,7 @@ body {
     flex-direction: column;
 }
 
-input,
+form input,
 textarea {
     margin: 10px 0 0 0;
     padding: 5px 10px;

@@ -6,58 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table Component</title>
     <link rel="stylesheet" href="style/style.css">
+    <script src="https://kit.fontawesome.com/c78853a544.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="wrapper">
         <!-- Таблица с данными -->
         <div class="table-container">
-            <table class="table">
-                <thead class="table__head">
-                    <tr>
-                        <th>
-                            <div>
-                                First name
-                                <span class="sort sort-firstName">
-                                    <span class="sort-asc"></span>
-                                    <span class="sort-desc"></span>
-                                </span>
-                            </div>
-                        </th>
-                        <th>
-                            <div>
-                                Last name
-                                <div class="sort sort-lastName">
-                                    <span class="sort-asc"></span>
-                                    <span class="sort-desc"></span>
+            <div>
+                <table class="table">
+                    <thead class="table__head">
+                        <tr>
+                            <th class="firstName">
+                                <div>
+                                    First name
+                                    <span class="sort sort-firstName">
+                                        <span class="sort-asc"></span>
+                                        <span class="sort-desc"></span>
+                                    </span>
                                 </div>
-                            </div>
-                        </th>
-                        <th>
-                            <div>
-                                About
-                                <div class="sort sort-about">
-                                    <span class="sort-asc"></span>
-                                    <span class="sort-desc"></span>
+                            </th>
+                            <th class="lastName">
+                                <div>
+                                    Last name
+                                    <div class="sort sort-lastName">
+                                        <span class="sort-asc"></span>
+                                        <span class="sort-desc"></span>
+                                    </div>
                                 </div>
-                            </div>
-                        </th>
-                        <th>
-                            <div>
-                                Eye color
-                                <div class="sort sort-eyeColor">
-                                    <span class="sort-asc"></span>
-                                    <span class="sort-desc"></span>
+                            </th>
+                            <th class="about">
+                                <div>
+                                    About
+                                    <div class="sort sort-about">
+                                        <span class="sort-asc"></span>
+                                        <span class="sort-desc"></span>
+                                    </div>
                                 </div>
-                            </div>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody class="table__body">
-                </tbody>
-            </table>
-            <div class="table__pages">
-                
+                            </th>
+                            <th class="eyeColor">
+                                <div>
+                                    Eye color
+                                    <div class="sort sort-eyeColor">
+                                        <span class="sort-asc"></span>
+                                        <span class="sort-desc"></span>
+                                    </div>
+                                </div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body">
+                    </tbody>
+                </table>
+                <div class="table__pages"></div>
+            </div>
+            <div class="table__setting">
+                <i class="fa-solid fa-gear"></i>
+                <div class="table__setting-list">
+                    <ul>
+                        <li class="table__setting-item"> <input type="checkbox" checked value="firstName">First name</li>
+                        <li class="table__setting-item"> <input type="checkbox" checked value="lastName">Last name</li>
+                        <li class="table__setting-item"> <input type="checkbox" checked value="about">About</li>
+                        <li class="table__setting-item"> <input type="checkbox" checked value="eyeColor">Eye color</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- Форма для изменения данных таблицы -->
@@ -79,7 +91,7 @@
     <script src="scripts/download-data.js"></script>
     <script src="scripts/sort-data.js"></script>
     <script src="scripts/update-data.js"></script>
-
+    <script src="scripts/setting-columns.js"></script>
 
 </body>
 
