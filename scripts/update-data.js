@@ -20,7 +20,7 @@ tableBody.addEventListener("click", (e) => {
     const toHex = function (color) { // функция преобразования rgb в hex 
         function hex(str) {
             let result = parseInt(str).toString(16);
-            return result < 2 ? "0" + result : result;
+            return result.length < 2 ? "0" + result : result;
         }
 
         let rgb = color.match(/^rgb\(\s*(\d+),\s*(\d+),\s*(\d+)\s*\)$/);
@@ -60,8 +60,10 @@ buttonSave.addEventListener("click", () => {
         return item;
     });
 
+    data = people.slice();
+
     //обновление таблицы (вывод новых данных)
-    tableBody.innerHTML = downloadData(people);
+    tableBody.innerHTML = downloadData(data);
     //очищение полей
     inputFirstName.value = "";
     inputLastName.value = "";

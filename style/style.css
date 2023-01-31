@@ -85,6 +85,27 @@ body {
     /* Обрезаем всё за пределами блока */
 }
 
+.table__pages {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.table__page {
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.table__page:hover {
+    color: #7b7b7b;
+}
+
+.table__page._active {
+    font-weight: 700;
+}
+
 .form-container {
     margin: 20px;
 }
@@ -93,7 +114,7 @@ body {
     display: none;
 }
 
-.form._active{
+.form._active {
     display: flex;
     flex-direction: column;
 }

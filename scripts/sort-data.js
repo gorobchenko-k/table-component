@@ -10,13 +10,14 @@ function showSort(target, orderSort) {
     let column = target.parentElement.classList[1].slice(5); // получаем ключ объекта, по которому необходимо отсортировать массив
     if (target.classList.contains("_active")) { // если массив уже отсортирован по этому ключу, выводим исходный массив
         target.classList.remove("_active");
-        tableBody.innerHTML = downloadData(people);
+        data = people.slice();
     } else {
         sortAsc.forEach(item => item.classList.remove("_active"));
         sortDesc.forEach(item => item.classList.remove("_active"));
         target.classList.add("_active");
-        tableBody.innerHTML = orderSort === "asc" ? downloadData(sortDate(column)) : downloadData(sortDate(column).reverse());
+        data = orderSort === "asc" ? sortDate(column) : sortDate(column).reverse();
     }
+    tableBody.innerHTML = downloadData(data);
 }
 
 //функция сортировки массива People по определенной колонке 
