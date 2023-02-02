@@ -1,10 +1,3 @@
-// const colors = {
-//     blue: "#0000ff",
-//     brown: "#a52a2a",
-//     green: "#00ff00",
-//     red: "#ff0000"
-// };
-
 const tableTr = tableBody.querySelectorAll("tr");
 const form = document.querySelector(".form");
 const inputFirstName = document.querySelector("#firstName");
@@ -41,7 +34,7 @@ tableBody.addEventListener("click", (e) => {
         tableTr.forEach(item => item.classList.remove("_active"));
         row.classList.add("_active");
     }
-    // вывод дынных в поля формы 
+    // вывод данных в поля формы 
     inputFirstName.value = row.querySelector(".firstName").textContent;
     inputLastName.value = row.querySelector(".lastName").textContent;
     inputAbout.value = row.querySelector(".about").textContent;
@@ -66,7 +59,7 @@ buttonSave.addEventListener("click", () => {
     form.classList.remove("_active");
 });
 
-buttonCancel.addEventListener("click", () => { //отмена сохранение данных
+buttonCancel.addEventListener("click", () => { //отмена сохранения данных
     form.classList.remove("_active");
     tableTr.forEach(item => item.classList.remove("_active"));
 });

@@ -94,7 +94,7 @@ body {
     /* Обрезаем всё за пределами блока */
 }
 
-.table__pages {
+.pages__navigation {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -102,18 +102,20 @@ body {
 }
 
 .table__page {
-    text-decoration: underline;
+    border: 1px solid #f0f0f0;
     cursor: pointer;
-    padding: 5px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    user-select: none;
     transition: all 0.3s ease 0s;
 }
 
 .table__page:hover {
-    color: #7b7b7b;
+    background-color: #f0f0f0;
 }
 
 .table__page._active {
-    font-weight: 700;
+    background-color: #f0f0f0;
 }
 
 .table__setting {

@@ -23,13 +23,35 @@ for (let index = 1; index <= people.length / countRows; index++) {
 tablePages.innerHTML = strTablePages;
 const tablePageList = tablePages.querySelectorAll(".table__page");
 tablePageList[0].classList.add("_active");
-// при клике по номеру страницы меняем номер страницы и выводим данные
-tablePageList.forEach(item => item.addEventListener("click", (e) => {
-    pageNumber = e.target.textContent;
+
+function changePage() {
     tableBody.innerHTML = downloadData(people); // загрузка строки таблицы в <tbody>
     tablePageList.forEach(item => item.classList.remove("_active"));
-    e.target.classList.add("_active");
+    tablePageList[pageNumber - 1].classList.add("_active");
+}
+
+// при клике по номеру страницы меняем номер страницы и выводим данные
+tablePageList.forEach(item => item.addEventListener("click", (e) => {
+    pageNumber = +e.target.textContent;
+    changePage();
 }));
+
+const arrowPrevPage = document.querySelector(".prevPage");
+const arrowNextPage = document.querySelector(".nextPage");
+
+arrowPrevPage.addEventListener("click", () => {
+    if (pageNumber !== 1) {
+        pageNumber -= 1;
+        changePage();
+    }
+});
+
+arrowNextPage.addEventListener("click", () => {
+    if (pageNumber !== people.length / countRows) {
+        pageNumber += 1;
+        changePage();
+    }
+});
 
 function downloadData(people) {
     const lastRow = pageNumber * countRows;
