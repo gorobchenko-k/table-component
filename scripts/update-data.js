@@ -14,7 +14,7 @@ const inputEyeColor = document.querySelector("#eyeColor");
 const buttonSave = document.querySelector(".button-save");
 const buttonCancel = document.querySelector(".button-cancel");
 
-let rowId;
+let rowIndex;
 
 tableBody.addEventListener("click", (e) => {
     const toHex = function (color) { // функция преобразования rgb в hex 
@@ -24,16 +24,14 @@ tableBody.addEventListener("click", (e) => {
         }
 
         let rgb = color.match(/^rgb\(\s*(\d+),\s*(\d+),\s*(\d+)\s*\)$/);
-        console.log(rgb);
 
         return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
     };
 
     let row = e.target.closest("tr");
     const color = row.querySelector(".eyeColor").style.backgroundColor;
-    console.log(color);
 
-    rowId = row.dataset.id;
+    rowIndex = row.dataset.index;
 
     form.classList.add("_active"); // отображение формы для изменения данных
 
@@ -52,15 +50,10 @@ tableBody.addEventListener("click", (e) => {
 
 buttonSave.addEventListener("click", () => {
     // сохранение данных
-    people = people.map(item => {
-        if (item.id === rowId) {
-            item.name.firstName = inputFirstName.value;
-            item.name.lastName = inputLastName.value;
-            item.about = inputAbout.value;
-            item.eyeColor = inputEyeColor.value;
-        }
-        return item;
-    });
+    people[rowIndex].name.firstName = inputFirstName.value;
+    people[rowIndex].name.lastName = inputLastName.value;
+    people[rowIndex].about = inputAbout.value;
+    people[rowIndex].eyeColor = inputEyeColor.value;
 
     //обновление таблицы (вывод новых данных)
     sortData(dataSort);

@@ -38,7 +38,7 @@ function downloadData(people) {
 
     for (let index = firstRow; index < lastRow; index++) {
         const person = people[index];
-        strTable += `<tr data-id=${person.id}>
+        strTable += `<tr data-index=${index}>
                     <td class="firstName ${hiddenColumns.firstName ? '' : '_hidden'}">${person.name.firstName}</td>
                     <td class="lastName ${hiddenColumns.lastName ? '' : '_hidden'}">${person.name.lastName}</td>
                     <td class="about ${hiddenColumns.about ? '' : '_hidden'}"><p>${person.about}</p></td>
