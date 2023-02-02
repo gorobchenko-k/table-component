@@ -1,9 +1,9 @@
-const colors = {
-    blue: "#0000ff",
-    brown: "#a52a2a",
-    green: "#00ff00",
-    red: "#ff0000"
-};
+// const colors = {
+//     blue: "#0000ff",
+//     brown: "#a52a2a",
+//     green: "#00ff00",
+//     red: "#ff0000"
+// };
 
 const tableTr = tableBody.querySelectorAll("tr");
 const form = document.querySelector(".form");
@@ -24,12 +24,14 @@ tableBody.addEventListener("click", (e) => {
         }
 
         let rgb = color.match(/^rgb\(\s*(\d+),\s*(\d+),\s*(\d+)\s*\)$/);
+        console.log(rgb);
 
         return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
     };
 
     let row = e.target.closest("tr");
     const color = row.querySelector(".eyeColor").style.backgroundColor;
+    console.log(color);
 
     rowId = row.dataset.id;
 
@@ -45,7 +47,7 @@ tableBody.addEventListener("click", (e) => {
     inputFirstName.value = row.querySelector(".firstName").textContent;
     inputLastName.value = row.querySelector(".lastName").textContent;
     inputAbout.value = row.querySelector(".about").textContent;
-    inputEyeColor.value = colors[color] ? colors[color] : toHex(color);
+    inputEyeColor.value = toHex(color);
 });
 
 buttonSave.addEventListener("click", () => {
@@ -60,17 +62,14 @@ buttonSave.addEventListener("click", () => {
         return item;
     });
 
-    data = people.slice();
-
     //обновление таблицы (вывод новых данных)
-    tableBody.innerHTML = downloadData(data);
+    sortData(dataSort);
+    tableBody.innerHTML = downloadData(people);
     //очищение полей
     inputFirstName.value = "";
     inputLastName.value = "";
     inputAbout.value = "";
     inputEyeColor.value = "#000000";
-    sortAsc.forEach(item => item.classList.remove("_active"));
-    sortDesc.forEach(item => item.classList.remove("_active"));
     form.classList.remove("_active");
 });
 

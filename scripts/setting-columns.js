@@ -24,6 +24,4 @@ tableSettingCheckbox.forEach(item => item.addEventListener("change", (e) => {
     } else { // скрыть столбец
         column.forEach(item => item.classList.add("_hidden"));
     }
-
-    console.log(hiddenColumns);
 }));
