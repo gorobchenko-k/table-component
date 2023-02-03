@@ -7,21 +7,22 @@ const inputEyeColor = document.querySelector("#eyeColor");
 const buttonSave = document.querySelector(".button-save");
 const buttonCancel = document.querySelector(".button-cancel");
 
-let rowIndex;
+let rowIndex; // индекс строки, данный которой изменены
 
+// событие при клике по строке таблицы
 tableBody.addEventListener("click", (e) => {
-    const toHex = function (color) { // функция преобразования rgb в hex 
+    // функция преобразования rgb в hex
+    const toHex = (color) => { 
         function hex(str) {
-            let result = parseInt(str).toString(16);
+            const result = parseInt(str).toString(16);
             return result.length < 2 ? "0" + result : result;
         }
 
-        let rgb = color.match(/^rgb\(\s*(\d+),\s*(\d+),\s*(\d+)\s*\)$/);
-
+        const rgb = color.match(/^rgb\(\s*(\d+),\s*(\d+),\s*(\d+)\s*\)$/);
         return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
     };
 
-    let row = e.target.closest("tr");
+    const row = e.target.closest("tr");
     const color = row.querySelector(".eyeColor").style.backgroundColor;
 
     rowIndex = row.dataset.index;
@@ -41,17 +42,17 @@ tableBody.addEventListener("click", (e) => {
     inputEyeColor.value = toHex(color);
 });
 
+// функция сохранения данных, обновление таблицы
 buttonSave.addEventListener("click", () => {
-    // сохранение данных
     people[rowIndex].name.firstName = inputFirstName.value;
     people[rowIndex].name.lastName = inputLastName.value;
     people[rowIndex].about = inputAbout.value;
     people[rowIndex].eyeColor = inputEyeColor.value;
 
-    //обновление таблицы (вывод новых данных)
     sortData(dataSort);
     tableBody.innerHTML = downloadData(people);
-    //очищение полей
+
+    // очищение полей и скрытие формы
     inputFirstName.value = "";
     inputLastName.value = "";
     inputAbout.value = "";
@@ -59,7 +60,8 @@ buttonSave.addEventListener("click", () => {
     form.classList.remove("_active");
 });
 
-buttonCancel.addEventListener("click", () => { //отмена сохранения данных
+// функция отмены сохранения данных
+buttonCancel.addEventListener("click", () => {
     form.classList.remove("_active");
     tableTr.forEach(item => item.classList.remove("_active"));
 });
