@@ -1,3 +1,4 @@
+"use strict";
 const sortAsc = document.querySelectorAll(".sort-asc");
 const sortDesc = document.querySelectorAll(".sort-desc");
 
@@ -7,7 +8,8 @@ sortDesc.forEach(item => item.addEventListener("click", (e) => showSort(e.target
 
 // функция изменения стиля активной стрелки сортировки и выводы отсортированных данных
 function showSort(target, orderSort) {
-    const column = target.parentElement.classList[1].slice(5); // колонка таблицы, по которой необходимо отсортировать массив
+    // колонка таблицы, по которой необходимо отсортировать массив
+    const column = target.parentElement.classList[1].slice(5);
     if (target.classList.contains("_active")) {
         target.classList.remove("_active");
         dataSort = ["id", "asc"];

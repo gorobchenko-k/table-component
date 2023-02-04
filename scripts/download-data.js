@@ -1,3 +1,4 @@
+"use strict";
 const valueEyeColors = {
     blue: "#0000ff",
     brown: "#a52a2a",
@@ -9,9 +10,9 @@ const tablePages = document.querySelector(".table__pages");
 const arrowPrevPage = document.querySelector(".prevPage");
 const arrowNextPage = document.querySelector(".nextPage");
 const countRows = 10;
-let pageNumber = 1; // при загрузке отобажается 1ая страница таблицы
+let pageNumber = 1;
 let dataSort = ["id", "asc"];
-let hiddenColumns = { // false - колонка скрыта
+let hiddenColumns = {
     firstName: true,
     lastName: true,
     about: true,
@@ -72,6 +73,9 @@ arrowNextPage.addEventListener("click", () => {
     }
 });
 
-people.forEach(item => item.eyeColor = valueEyeColors[item.eyeColor]); // изменение цвета глаз на hex значение
-sortData(dataSort); // сортировка данных по id
-tableBody.innerHTML = downloadData(people); // загрузка строки таблицы в <tbody>
+// изменение цвета глаз на hex значение
+people.forEach(item => item.eyeColor = valueEyeColors[item.eyeColor]);
+// сортировка данных по id (сортировка по умолчанию) 
+sortData(dataSort);
+// загрузка строк таблицы в <tbody>
+tableBody.innerHTML = downloadData(people);

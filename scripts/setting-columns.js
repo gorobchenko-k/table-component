@@ -1,3 +1,4 @@
+"use strict";
 const table = document.querySelector(".table");
 const tableSetting = document.querySelector(".table__setting i");
 const tableSettingList = document.querySelector(".table__setting-list");

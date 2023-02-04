@@ -1,3 +1,4 @@
+"use strict";
 const tableTr = tableBody.querySelectorAll("tr");
 const form = document.querySelector(".form");
 const inputFirstName = document.querySelector("#firstName");
@@ -7,12 +8,13 @@ const inputEyeColor = document.querySelector("#eyeColor");
 const buttonSave = document.querySelector(".button-save");
 const buttonCancel = document.querySelector(".button-cancel");
 
-let rowIndex; // индекс строки, данный которой изменены
+// индекс строки, данный которой изменены
+let rowIndex;
 
 // событие при клике по строке таблицы
 tableBody.addEventListener("click", (e) => {
     // функция преобразования rgb в hex
-    const toHex = (color) => { 
+    const toHex = (color) => {
         function hex(str) {
             const result = parseInt(str).toString(16);
             return result.length < 2 ? "0" + result : result;
@@ -27,7 +29,8 @@ tableBody.addEventListener("click", (e) => {
 
     rowIndex = row.dataset.index;
 
-    form.classList.add("_active"); // отображение формы для изменения данных
+    // отображение формы для изменения данных
+    form.classList.add("_active");
 
     if (row.classList.contains("_active")) {
         row.classList.remove("_active");
