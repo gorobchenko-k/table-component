@@ -8,7 +8,7 @@
 
 **[Ссылка на проект](https://gorobchenko-k.github.io/table-component/)**
 
-<!-- <img src="https://user-images.githubusercontent.com/115789797/214234347-9b4b504a-3abe-4b83-8bcb-bb193b66681d.gif" width="250"/> -->
+<img src="https://user-images.githubusercontent.com/115789797/216774766-99e4e468-3de5-48f5-ae27-2ca6d1ecd242.gif" width="500"/>
 
 Для создания использовались:
 <div>
